@@ -10,7 +10,7 @@
   
   
 
-  <link rel="shortcut icon" href="/images/avatar.jpg" type="image/png" />
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
   <meta name="description" content="Tiny Wang&#39;s blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tiny Wang">
@@ -27,7 +27,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1579413167430">
+  <link rel="stylesheet" href="/css/style.css?v=1579420383740">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -52,8 +52,8 @@
     </div>
     <div class="nexmoe-count">
         <div><span>文章</span>2</div>
-        <div><span>标签</span>0</div>
-        <div><span>分类</span>0</div>
+        <div><span>标签</span>3</div>
+        <div><span>分类</span>2</div>
     </div>
     <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -88,9 +88,48 @@
 </div>
   
   
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Web/">Web</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/生活/">生活</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
 
   
   
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/%E5%B9%BB%E6%83%B3/" style="font-size: 10px;">幻想</a> <a href="/tags/%E6%8A%98%E8%85%BE/" style="font-size: 10px;">折腾</a>
+    </div>
+    
+  </div>
+
   
   
   <div class="nexmoe-widget-wrap">
@@ -118,9 +157,9 @@
         <a href="/2020/01/18/Initblog/">
             <div class="nexmoe-post-cover mdui-ripple"> 
                 
-                    <img src="/images/desktop.jpg" alt="使用Hexo + Nexmoe构建博客">
+                    <img src="/images/desktop.jpg" alt="Hexo的艰难历程">
                 
-                <h1>使用Hexo + Nexmoe构建博客</h1>
+                <h1>Hexo的艰难历程</h1>
             </div>
         </a>
         <div class="nexmoe-post-meta">
@@ -128,63 +167,16 @@
             <a><i class="nexmoefont icon-areachart"></i>366 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
             
+                <a class="nexmoefont icon-appstore-fill -link" href="/categories/Web/">Web</a>
+            
+            
+                <a class="nexmoefont icon-tag-fill -link" href="/tags/Hexo/" rel="tag">Hexo</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/%E6%8A%98%E8%85%BE/" rel="tag">折腾</a>
             
         </div>
         <article>
             
             <p>去年在Github探索中发现了Hexo库,打断了我徒手<del>(手写html)</del>的想法</p>
 <p>为凸显个性(粉红的少女心)~~,决定以Nexmoe作为模板</p>
-<blockquote>
-<p>ubuntu</p>
-<pre><code class="shell">sudo apt install git nodejs npm
-sudo npm install hexo-cli -g
-hexo init &#39;Blog&#39;
-cd Blog/themes/
-git clone https://github.com/nexmoe/hexo-theme-nexmoe.git nexmoe
-cd nexmoe
-npm install hexo-wordcount --save
-cp -i _config.example.yml _config.yml
-hexo s --debug
-# 此过程不完善,详情以下文为主</code></pre>
-</blockquote>
-<p>安装hexo模块过程中发生了一些错误:</p>
-<ul>
-<li><p>npm全局安装没有写权限</p>
-<p>解决:<code>sudo</code></p>
-</li>
-<li><p>报错<code>npm ERR! cb()never called!</code></p>
-<p>解决:<a href="https://www.cnblogs.com/webdragon/p/9700879.html" target="_blank" rel="noopener">博客园</a></p>
-</li>
-</ul>
-<p>服务运行中发生了一些错误:</p>
-<ul>
-<li><p>无论图片放在哪里,都无法显示(与文章(即.md)无关的图片)</p>
-<p>解决:删库<del>跑路</del>重装,在<code>nexmoe(主题文件夹)/source/</code>创建images文件夹,图片扔进去,并修改<code>主题配置文件</code>的图片路径</p>
-</li>
-<li><p>markdown插入代码段显示有误<img src="images/20/01/highlightproblem.png" alt=""></p>
-<p>解决:无正规套路,如下可修正</p>
-<ul>
-<li><p><code>站点配置文件</code>修改</p>
-<pre><code class="yaml">highlight:
-    enable: false #true改false</code></pre>
-</li>
-<li><p>执行<code>hexo clean</code></p>
-</li>
-<li><p>删除<code>package.json</code>的marked项</p>
-</li>
-<li><p>把删除的marked补回去</p>
-<p>以上每项做完后都启动<code>hexo s --debug</code>测试一下</p>
-<p>除了第一项外都可打乱顺序,如果无效多试几次</p>
-<p>也可以发表评论求助,我乐于帮助每一位有困难的人</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>小提示:</p>
-<ul>
-<li>在站点根目录和主题目录均有source文件夹,前者为文章服务,后者受命于主题</li>
-</ul>
-
             
         </article>
     </div>
@@ -200,23 +192,18 @@ hexo s --debug
         </a>
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月17日</a>
-            <a><i class="nexmoefont icon-areachart"></i>146 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>144 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
             
+                <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+            
+            
+                <a class="nexmoefont icon-tag-fill -link" href="/tags/%E5%B9%BB%E6%83%B3/" rel="tag">幻想</a>
             
         </div>
         <article>
             
-            <p>测试…</p>
-<p><del>abcdefghijklmnopqrstuvwxyz</del></p>
-<p>2020是特别的一年,许多无用的github仓库一个一个删除了,只留下了博客库和两个c/cpp库</p>
-<p>可惜我的<del>宏伟</del>梦想无法实现,原想从opengl<del>(足够底层)</del>写个控制台式.易于使用.跨平台<del>(只用opengl库函数,当然跨平台)</del>的GUI库.[然而碰到了难关<del>(shader学不会)</del>]</p>
-<p><code>Tank</code>库是我构思的游戏轮廓,由于达不到个人要求于是停更了</p>
-<p>……</p>
-<p>曾听说,</p>
-<h1 id="爱情是人生存的动力"><a href="#爱情是人生存的动力" class="headerlink" title="爱情是人生存的动力"></a>爱情是人生存的动力</h1><p>可惜没有志同的同龄小姐姐…</p>
-<p>Over.</p>
-
+            <p><del>abcdefghijklmnopqrstuvwxyz</del></p>
             
         </article>
     </div>
@@ -238,7 +225,7 @@ hexo s --debug
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1579413167432"></script>
+<script src="/js/app.js?v=1579420383749"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
