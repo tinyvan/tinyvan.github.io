@@ -10,7 +10,7 @@
   
   
 
-  <link rel="shortcut icon" href="/images/avatar.png" type="image/png" />
+  <link rel="shortcut icon" href="/images/avatar.jpg" type="image/png" />
   <meta name="description" content="Tiny Wang&#39;s blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tiny Wang">
@@ -27,19 +27,19 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1579353448444">
+  <link rel="stylesheet" href="/css/style.css?v=1579413167430">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
   
   <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(/images/desktop.png)"></div>
+    <div class="nexmoe-bg" style="background-image: url(/images/desktop.jpg)"></div>
     <div class="mdui-appbar mdui-shadow-0">
       <div class="mdui-toolbar">
         <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="Tiny Wang" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+        <a href="/" title="Tiny Wang" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.jpg"></a>
        </div>
     </div>
   </div>
@@ -47,7 +47,7 @@
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
         <a href="/" title="Tiny Wang">
-            <img src="/images/avatar.png" alt="Tiny Wang">
+            <img src="/images/avatar.jpg" alt="Tiny Wang">
         </a>
     </div>
     <div class="nexmoe-count">
@@ -81,6 +81,8 @@
             <i class="nexmoefont icon-bilibili"></i>
         </a><a class="mdui-ripple" href="https://github.com/tinyvan" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
             <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://www.zhihu.com/people/carlcj/" target="_blank" mdui-tooltip="{content: '知乎'}" style="color: rgb(100,185,255);background-color: rgba(100,185,255,.15);">
+            <i class="nexmoefont icon-zhihu"></i>
         </a>
     </div>
 </div>
@@ -116,14 +118,14 @@
         <a href="/2020/01/18/Initblog/">
             <div class="nexmoe-post-cover mdui-ripple"> 
                 
-                    <img src="/images/desktop.png" alt="使用Hexo + Nexmoe构建博客">
+                    <img src="/images/desktop.jpg" alt="使用Hexo + Nexmoe构建博客">
                 
                 <h1>使用Hexo + Nexmoe构建博客</h1>
             </div>
         </a>
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月18日</a>
-            <a><i class="nexmoefont icon-areachart"></i>414 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>366 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
             
             
@@ -131,38 +133,57 @@
         <article>
             
             <p>去年在Github探索中发现了Hexo库,打断了我徒手<del>(手写html)</del>的想法</p>
-<p>为凸显个人风格<del>(粉红的少女心)</del>,决定以Nexmoe作为模板</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><p>前置依赖:</p>
-<p>npm,node,git</p>
-<p>Ubuntu 可以<code>sudo apt install npm node git</code>搞定,其他发行版用各自的软件包管理娘</p>
-<p>至于windows,一个一个网上查吧(貌似直接安装git和node.js就可以了)</p>
-<p>为了方便以后维护,单独创建一个安全<del>(防丢防删防找不到)</del>的文件夹,笔者常用生产系统是Ubuntu,就放在<code>~/桌面</code>文件夹好了(<code>~/文档</code>放代码)</p>
-<p>启动终端并定位到上文的文件夹,</p>
-<p>Linux:<code>npm install hexo-cli -g</code></p>
+<p>为凸显个性(粉红的少女心)~~,决定以Nexmoe作为模板</p>
 <blockquote>
-<p>笔者操作时报错:<code>ERR! cb() never called!</code><br>解决方法:[本段引用自<a href="https://www.cnblogs.com/webdragon/p/9700879.html" target="_blank" rel="noopener">cnblog</a><br>1.清除npm缓存<code>cache clean -f</code><br>2.安装最新的node helper <code>npm install n -g</code><br>3.助手安装最新稳定版node <code>n stable</code><br>再次安装hexo <code>npm install hexo-cli -g</code></p>
-</blockquote>
-<p>安装完毕后运行<code>hexo Init blog</code>(blog 是你的博客文件夹,可换成你喜欢的名字)</p>
-<p>进入<code>blog</code>文件夹<code>cd blog</code></p>
-<p>启动blog<code>hexo s</code></p>
-<p>出现<code>01:55:11.102 INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</code>则配置成功,可以打开浏览器访问<code>localhost:4000</code>​</p>
-<p>在控制台Ctrl+C可以关闭</p>
-<p>在<code>config.yml</code>中可以对hexo进行配置</p>
-<p><del>略</del>(太多了)</p>
-<p><a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置法</a></p>
-<h3 id="nexmoe"><a href="#nexmoe" class="headerlink" title="nexmoe"></a>nexmoe</h3><p>进入<code>themes</code>文件夹</p>
-<p>键入命令(本段引用自<a href="https://docs.nexmoe.com" target="_blank" rel="noopener">Nexmoe文档</a>)</p>
-<pre><code class="shell">git clone https://github.com/nexmoe/hexo-theme-nexmoe.git nexmoe
+<p>ubuntu</p>
+<pre><code class="shell">sudo apt install git nodejs npm
+sudo npm install hexo-cli -g
+hexo init &#39;Blog&#39;
+cd Blog/themes/
+git clone https://github.com/nexmoe/hexo-theme-nexmoe.git nexmoe
 cd nexmoe
-npm i --save hexo-wordcount
+npm install hexo-wordcount --save
 cp -i _config.example.yml _config.yml
-#以后可以使用git pull 更新nexmoe主题</code></pre>
-<blockquote>
-<p>奇技淫巧</p>
-<pre><code class="shell">hexo s --debug</code></pre>
-<p>以调试模式启动hexo</p>
+hexo s --debug
+# 此过程不完善,详情以下文为主</code></pre>
 </blockquote>
-<p>未完待续</p>
+<p>安装hexo模块过程中发生了一些错误:</p>
+<ul>
+<li><p>npm全局安装没有写权限</p>
+<p>解决:<code>sudo</code></p>
+</li>
+<li><p>报错<code>npm ERR! cb()never called!</code></p>
+<p>解决:<a href="https://www.cnblogs.com/webdragon/p/9700879.html" target="_blank" rel="noopener">博客园</a></p>
+</li>
+</ul>
+<p>服务运行中发生了一些错误:</p>
+<ul>
+<li><p>无论图片放在哪里,都无法显示(与文章(即.md)无关的图片)</p>
+<p>解决:删库<del>跑路</del>重装,在<code>nexmoe(主题文件夹)/source/</code>创建images文件夹,图片扔进去,并修改<code>主题配置文件</code>的图片路径</p>
+</li>
+<li><p>markdown插入代码段显示有误<img src="images/20/01/highlightproblem.png" alt=""></p>
+<p>解决:无正规套路,如下可修正</p>
+<ul>
+<li><p><code>站点配置文件</code>修改</p>
+<pre><code class="yaml">highlight:
+    enable: false #true改false</code></pre>
+</li>
+<li><p>执行<code>hexo clean</code></p>
+</li>
+<li><p>删除<code>package.json</code>的marked项</p>
+</li>
+<li><p>把删除的marked补回去</p>
+<p>以上每项做完后都启动<code>hexo s --debug</code>测试一下</p>
+<p>除了第一项外都可打乱顺序,如果无效多试几次</p>
+<p>也可以发表评论求助,我乐于帮助每一位有困难的人</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>小提示:</p>
+<ul>
+<li>在站点根目录和主题目录均有source文件夹,前者为文章服务,后者受命于主题</li>
+</ul>
 
             
         </article>
@@ -172,7 +193,7 @@ cp -i _config.example.yml _config.yml
         <a href="/2020/01/17/LifeBeginning/">
             <div class="nexmoe-post-cover mdui-ripple"> 
                 
-                    <img src="/images/desktop.png" alt="开篇">
+                    <img src="/images/desktop.jpg" alt="开篇">
                 
                 <h1>开篇</h1>
             </div>
@@ -217,7 +238,7 @@ cp -i _config.example.yml _config.yml
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1579353448447"></script>
+<script src="/js/app.js?v=1579413167432"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
