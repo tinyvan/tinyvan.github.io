@@ -11,15 +11,15 @@
   
 
   <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
-  <meta name="description" content="apt安装就是方便">
+  <meta name="description" content="完全使用apt包管理器安装Qt5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu.Qt5安装">
 <meta property="og:url" content="https://tinyvan.github.io/2020/01/20/Qt5/index.html">
 <meta property="og:site_name" content="Tiny Wang&#39;s Forbidden City">
-<meta property="og:description" content="apt安装就是方便">
+<meta property="og:description" content="完全使用apt包管理器安装Qt5">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-20T01:28:20.000Z">
-<meta property="article:modified_time" content="2020-02-11T07:45:35.544Z">
+<meta property="article:modified_time" content="2020-03-24T01:29:12.620Z">
 <meta property="article:author" content="Tiny Wang">
 <meta property="article:tag" content="qt">
 <meta name="twitter:card" content="summary">
@@ -30,7 +30,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1581657557328">
+  <link rel="stylesheet" href="/css/style.css?v=1585013365262">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -170,7 +170,7 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月20日</a>
-    <a><i class="nexmoefont icon-areachart"></i>83 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>135 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
     
       <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%A1%8C%E9%9D%A2/">桌面</a>
@@ -180,11 +180,12 @@
     
   </div>
   <article>
-    <p>apt安装就是方便</p>
+    <p>完全使用apt包管理器安装Qt5</p>
 <a id="more"></a>
 
-<p>qt官网的安装方式不受apt限制,且在apt软件库中有大量qt相关的开发软件包,足矣</p>
-<p>命令</p>
+<p>Qt官网提供便捷的安装工具但不与apt兼容(apt不能对其进行更新.卸载的操作),有时候甚至找不到下载地址…每次要找好长时间</p>
+<p>某天用apt安装软件的时候,发现qt存在于源中</p>
+<p>一顿操作后,qt5在我的ubuntu19.10可用</p>
 <pre><code class="shell">sudo apt install qtcreator qt5-default qt5-qmake qtdeclarative5-dev
 #附加:qtquickcontrols(可选)
 sudo apt install qmlscene qtquickcontrols2-5-dev</code></pre>
@@ -236,7 +237,7 @@ sudo apt install qmlscene qtquickcontrols2-5-dev</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1581657557333"></script>
+<script src="/js/app.js?v=1585013365272"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
